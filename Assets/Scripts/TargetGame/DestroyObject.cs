@@ -7,7 +7,7 @@ using UnityEngine.XR.ARSubsystems;
 [RequireComponent(typeof(ARRaycastManager))]
 public class DestroyObject : MonoBehaviour
 {
-
+    public int pointValue = 10;
     ARRaycastManager m_RaycastManager;
     public TargetSpawner spawner;
     void Awake()
@@ -29,6 +29,7 @@ public class DestroyObject : MonoBehaviour
         if (collision.gameObject.CompareTag("Dart"))
         {
             Destroy(gameObject);
+            GameManager.Instance.AddPoints(pointValue);
             spawner.StartCoroutine(spawner.RespawnTarget());
         }
     }
