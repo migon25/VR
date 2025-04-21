@@ -16,12 +16,20 @@ public class DestroyObject : MonoBehaviour
     }
     private void Update()
     {
-        if (Pointer.current != null && Pointer.current.press.isPressed)
+        //if (Pointer.current != null && Pointer.current.press.isPressed)
+        //{
+        //    Debug.Log("destroyed");
+        //    Destroy(gameObject);
+        //    spawner.StartCoroutine(spawner.RespawnTarget());
+
+        //}
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Dart"))
         {
-            Debug.Log("destroyed");
             Destroy(gameObject);
             spawner.StartCoroutine(spawner.RespawnTarget());
-
         }
     }
 }

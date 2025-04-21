@@ -20,7 +20,7 @@ public class TargetSpawner : MonoBehaviour
         currentTarget = Instantiate(targetPrefab, spawnPosition, Quaternion.identity);
 
         Vector3 planeForward = planeTransform.forward;
-        currentTarget.transform.Rotate(-0.531f, -114.561f, 89.738f);
+        currentTarget.transform.Rotate(-90f, 0f, 0f);
 
         currentTarget.GetComponent<DestroyObject>().spawner = this;
     }
