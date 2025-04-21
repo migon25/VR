@@ -30,7 +30,9 @@ public class DestroyObject : MonoBehaviour
         {
             Destroy(gameObject);
             GameManager.Instance.AddPoints(pointValue);
-            spawner.StartCoroutine(spawner.RespawnTarget());
+
+            if (spawner != null)
+                spawner.StartCoroutine(spawner.RespawnTarget());
         }
     }
 }
